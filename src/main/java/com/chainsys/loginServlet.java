@@ -5,12 +5,14 @@ import java.util.Scanner;
 import java.util.Set;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.employee.login.managerADDImpl;
 
+@WebServlet("/loginServlet")
 
 public class loginServlet extends HttpServlet {
        
