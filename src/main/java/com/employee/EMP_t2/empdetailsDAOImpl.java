@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jdbi.v3.core.Jdbi;
 
 import com.employee.model.DeptModel;
 import com.employee.model.Empdept;

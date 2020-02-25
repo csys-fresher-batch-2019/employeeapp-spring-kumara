@@ -3,8 +3,7 @@ package com.employee.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+
 //import java.sql.SQLException;
 //import java.sql.Statement;
 
@@ -18,7 +17,7 @@ public class dbconnection {
 		return con;
 
 	}
-
+/*
 	public static Jdbi getJdbi() {
 		Connection connection;
 		Jdbi jdbi = null;
@@ -31,5 +30,5 @@ public class dbconnection {
 			throw new RuntimeException(e);
 		}
 		return jdbi;
-	}
+	}*/
 }
