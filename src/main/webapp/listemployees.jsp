@@ -10,9 +10,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Employees</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
+<jsp:include page="head.jsp"></jsp:include>
 <center>
 <h3> EMPLOYEE DETAILS </h3>
 
@@ -35,7 +37,7 @@
           <%   for (EmployeeDetail ee : ne) { %>
             	 <tr>
             	 <td> <%=ee.geteId() %></td>
-            	 <td> <%=ee.getEmployeeName() %></td>
+            	 <td><a href ="AddressdetailServlet?name=<%=ee.getEmployeeName()%>"><%=ee.getEmployeeName() %></a> </td>
             	 <td> <%=ee.getGender() %></td>
             	 <td> <%=ee.getBirthDate() %></td>
             	 <td> <%=ee.getJoiningDate() %></td>

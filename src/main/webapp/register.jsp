@@ -2,7 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<title>Registration</title>
+<title>Registration</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 
 <style>
@@ -17,6 +18,8 @@ body
 }
 </style>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
+
 <center>
 <big>
 <h3>Registration form</h3>
@@ -43,6 +46,7 @@ Enter Gender :
 <input type="radio" name="gender" value="Female">Female
 <input type="radio" name="gender" value="Others">Others
 <br/>
+
 <pre><button type="Submit" > submit </button></pre>
 
 </big>

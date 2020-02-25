@@ -4,17 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+<title>tax</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<jsp:include page="head.jsp"></jsp:include>
+<body><jsp:include page="head.jsp"></jsp:include>
 
-<form action="deleteServlet">
+<form action = "TaxServlet" >
 <center>
 <b>
 <br> Enter  Employee_id :<input type="number" name="ID" required></br>
-<br><button type="Submit" >Remove</button></br></b></center>
+<br><button type="Submit" > Submit </button></br>
+</b>
+</center>
+
 </form>
 </body>
 </html>

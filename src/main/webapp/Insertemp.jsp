@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Employee</title>
-</head>
+<title>Add Employees</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <body>
-  
+  <jsp:include page="head.jsp"></jsp:include></head>
   <style>
 
 body
@@ -21,19 +21,16 @@ body
 </style>
 <form action ="InsertEmpServlet" action="get">
 <center><b>
-<h2> Insert New Employee <h2/><small>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br>Enter EmployeeName :<input type="text" name="name"
+<h2> Insert New Employee <h2/>
+<small><br>Enter EmployeeName :<input type="text" name="name"
 placeholder = "Enter EmployeeName" required autofocus><br/>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;
 Enter Gender :
 <input type="radio" name="gender" value="male">male
 <input type="radio" name="gender" value="female">female
 <input type="radio" name="gender" value="others">others
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;
-
+<br/>
 <br>Enter DOB  :<input type="date" name="dob" placeholder="YYYY-MM-DD" max="2020-02-20"/ required><br/>
-
 
 <br>Enter JoiningDate  :<input type="date" name="joindate" placeholder="YYYY-MM-DD"max="2020-02-20"/><br/>
 <!--  <br> Enter panCard : <input type="text" name="pancard">
@@ -46,12 +43,12 @@ Enter Gender :
        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
        required> </br>
 <br>Enter Email : <input type="email"  name="email"
-required><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+required><br/>
 <br> Enter BloodGroup: <input type="text" name="bloodGroup" required >
 </br>
 <br><button type="Submit" > Submit </button></br>
-</b>
-</center></small>
+</b></small>
+</center>
 </form>
 </body>
 </html>

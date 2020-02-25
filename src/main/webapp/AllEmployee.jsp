@@ -9,9 +9,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>fields</title>
+<title>fields</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body><center>
+
+
+<jsp:include page="logoutheader.jsp"></jsp:include>
+
 <style>
 
 
@@ -32,16 +37,12 @@ body
     <br>  <a href = "listempServlet">AllEmployees</a>  <br>
     <br> <a href ="Insertemp.jsp">Add new employees</a><br>
     <br> <a href ="update.jsp">Set department</a><br/>
+     <br> <a href ="dept.jsp">EmployeeDepartment</a></br>
     <br>   <a href = "bloodsearch.jsp">Blood Search</a>         <br>
-  <br> <a href ="dept.jsp">EmployeeDepartment</a></br>
+ <br> <a href="calculatetax.jsp">Taxcalculation</a></br>
+ <br> <a href ="promotionSalary.jsp">promotionSalary</a></br>
      <br> <a href ="delete.jsp">Remove Employee</a><br/>
-    
-    
-   <br><br> <form action="LogoutServlet">
-    
-    </script>
- 
-    <button type="Submit">Logout</button></br></br></form>  
+     
   </B></big></body>
     </center>
    

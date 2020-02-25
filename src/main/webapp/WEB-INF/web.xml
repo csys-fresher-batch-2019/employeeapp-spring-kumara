@@ -70,6 +70,24 @@
   	<description></description>
   	<servlet-class>com.chainsys.deptviewServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>TaxServlet</servlet-name>
+  	<display-name>TaxServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.chainsys.TaxServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddressdetailServlet</servlet-name>
+  	<display-name>AddressdetailServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.chainsys.AddressdetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>promotionServlet</servlet-name>
+  	<display-name>promotionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.chainsys.promotionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegisterServlet</servlet-name>
   	<url-pattern>/RegisterServlet</url-pattern>
@@ -113,5 +131,17 @@
   <servlet-mapping>
   	<servlet-name>deptviewServlet</servlet-name>
   	<url-pattern>/deptviewServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TaxServlet</servlet-name>
+  	<url-pattern>/TaxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddressdetailServlet</servlet-name>
+  	<url-pattern>/AddressdetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>promotionServlet</servlet-name>
+  	<url-pattern>/promotionServlet</url-pattern>
   </servlet-mapping>
 </web-app>
