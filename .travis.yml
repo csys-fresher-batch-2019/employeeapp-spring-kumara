@@ -1,0 +1,12 @@
+language: java
+deploy:
+  provider: cloudfoundry
+  username: kumarakkani888@gmail.com
+  password: Kumaran97@
+  api: https://api.run.pivotal.io
+  organization: EmployeeApp
+  space: development
+  manifest: manifest.yml
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
