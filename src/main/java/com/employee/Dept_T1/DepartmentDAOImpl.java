@@ -20,7 +20,6 @@ try (Connection con=dbconnection.getConnection();
 {
 String sql="insert into departments (d_id,department_name,manager_id,department_location) values("+departmentId+",'"+departmentName+"',"+managerId+",'"+departmentlocation+"')";
 System.out.println(sql);
-
 int row=stmt. executeUpdate(sql);
 System.out.println(row);
 }
@@ -28,10 +27,7 @@ catch (Exception e) {
 	 {
 		 e.printStackTrace();
 		 }	
-	
 }
-
-
 }
 
 
@@ -44,9 +40,6 @@ public EmployeeDAO empdept() throws Exception {
 			ResultSet rs = stmt.executeQuery(sql);)
 	{
 	System.out.println(sql);
-	
-	//int row=stmt. executeUpdate(sql);
-	
 	if(rs.next())
 	{
 		String deptt=rs.getString("dept");
@@ -89,8 +82,6 @@ public void deptadd(String deptName,int deptId)throws Exception{
 }
 
 
-
-
 public int getNoOfdept(String departmentLocation) throws Exception {
 	String sql="select count(department_name) as dept from departments where department_location=?";
 
@@ -99,9 +90,7 @@ public int getNoOfdept(String departmentLocation) throws Exception {
 			ResultSet rs= stmtt.executeQuery();)
 	{
 	stmtt.setString(1,departmentLocation);
-	//Statement stmt=con.createStatement();
-	
-	while(rs.next())
+		while(rs.next())
 	{
 		
 		String sqll=rs.getString("dept");
@@ -113,9 +102,7 @@ public int getNoOfdept(String departmentLocation) throws Exception {
 		 {
 			 e.printStackTrace();
 			 }
-		
 	}
-	
 	return 0;
 	
 }

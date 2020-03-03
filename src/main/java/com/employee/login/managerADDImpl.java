@@ -19,7 +19,6 @@ public class managerADDImpl implements addmanagerDAO {
 				 PreparedStatement k=connection.prepareStatement(sql);)
 		{
 	       System.out.println(sql); 
-	      
 	       k.setString(1, add.getManagerName());
 	       k.setString(2, add.getEmail());
 	       k.setDate(3, add.getDob());
@@ -44,8 +43,6 @@ public class managerADDImpl implements addmanagerDAO {
 		
 		    boolean result = false;
 			String sql=	"select pass_word from Manager where manager_name='"+managerName+"'" ;  
-				
-				
 				      String password1=null;
 				try(Connection  connection =dbconnection.getConnection();
 						ResultSet rs=connection.createStatement().executeQuery(sql); ) 
@@ -59,7 +56,6 @@ public class managerADDImpl implements addmanagerDAO {
 				{
 				if(password1.equals(passWord))
 				{
-					
 					//System.out.println(managerName+","+passWord+"");
 					System.out.println("log in");
 				 result = true;

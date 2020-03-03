@@ -23,8 +23,7 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 	/*private String salary;
 	private String employeeName;
 	private String eId;*/
-      
-	
+
 	public List<EmployeeDetail> showemp() throws Exception {
 		List<EmployeeDetail> ne= new ArrayList<>();
 		String sql="select * from employee_details";
@@ -32,11 +31,8 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 				Statement k=con.createStatement();
 				ResultSet rs=  k.executeQuery(sql);)
 		{
-		
-		
 		if(rs.next())
 		{
-			
 		do {
 			EmployeeDetail emp= new EmployeeDetail();
 			
@@ -51,9 +47,7 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
             emp.setGmail(rs.getString("gmail"));
             emp.setBloodGroup(rs.getString("blood_group"));
             ne.add(emp);
-            
-           
-		}while(rs.next());
+            }while(rs.next());
 		}else {
 			System.out.println("Record not Found");
 		}
@@ -62,7 +56,6 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 			 {
 				 e.printStackTrace();
 				 }
-
 		}
 		return ne;
 	      
@@ -84,7 +77,6 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		String employeeName2= rs.getString("manager_id");
 		String employeeName3=rs.getString("department_count");
 		System.out.println(employeeName +","+employeeName2+","+employeeName3+"");	
-	
 	} 
 			}
 			catch (Exception e) {
@@ -92,10 +84,8 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 					 e.printStackTrace();
 				 }
 			}
-	
 		return null;}
 
-	
 	
 	public void jdate()throws Exception {
 		String joiningDate = "2019-04-12";
@@ -106,7 +96,6 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		 String sql="update employee_details set joining_date=? where e_id=? ";
 		 try(Connection con=dbconnection.getConnection();
 				 PreparedStatement stmt=con.prepareStatement(sql);)
-			
 		 {
 			
 			stmt.setDate(1,kt1);
@@ -115,13 +104,11 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 			int rows = stmt. executeUpdate();
 			System.out.println(rows);
 		 }
-			
 		 }
 
 	public com.employee.login.EmployeeDAO deptcount() throws Exception {
 		// TODO Auto-generated method stub
 		String sql="select department_id,department_name,count(employee_name) as emp_count from departments  inner join employee_details  on departments.d_id=employee_details.department_id  group by department_id,department_name order by department_id asc";
-
 		
 		 try( Connection con=dbconnection.getConnection();
 				 Statement k=con.createStatement();
@@ -135,10 +122,8 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 			{
 				String departmentName =rs.getString("department_name");
 			String employeeName= rs.getString("department_id");
-			
 			int employeeName2=rs.getInt("emp_count");
 			System.out.println(employeeName+","+departmentName+","+employeeName2+"");
-					
 	}        
 		 }
 			catch (Exception e) {
@@ -162,11 +147,8 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		{	
 				stmt.setInt(1,dId);
 				try(ResultSet rs=stmt.executeQuery();)
-				
 		{
-		
-		
-		
+
 		while(rs.next())
 		{
 		 Empdept emp=new Empdept();
@@ -175,23 +157,16 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		emp.setEmployeeName(rs.getString("employee_name"));
 		emp.setDepartmentName(rs.getString("department_name"));
 		emp.setDepartmentLocation(rs.getString("department_location"));
-		
          list.add(emp);
-        
            // System.out.println(department_name+","+employee_name+","+department_id+"");
            // employeeDetail ob= new employeeDEtail();
-            
 		}
-		
-		
 		}
 		catch (Exception e) {
 			 {
 				 e.printStackTrace();
-				 
 			}
 		}
-		
 		return list;
 	}}
 
@@ -204,9 +179,7 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		 {
 			 String sql = "delete from employee_Details where e_id="+eId;
 			    System.out.println(sql);
-			     
 			    st.executeUpdate(sql);
-			     
 			    st.close();
 		 }
 	}
@@ -221,9 +194,7 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 		    	stmt.setInt(1, ee.getDepartmentId());
 		    	stmt.setInt(2,ee.geteId());
 		    stmt.executeUpdate();
-		       
 		    System.out.println("Update Successful");
-				
 	}
 			catch (Exception e) {
 				 {
@@ -236,12 +207,10 @@ public  class empdetailsDAOImpl implements empdetailsDAO {
 
 	public boolean insert(EmployeeDetail  tr) throws Exception {
 		 boolean insert =true;
-	    
 		 String sql = "insert into employee_details (e_id,employee_name,gender,birth_date,joining_date,pan_card,adhar_num,employee_mobnum,gmail,blood_group) values(employee_adds.nextval,?,?,?,?,?,?,?,?,?)";
 		 System.out.println(sql);
 try(   
 	Connection connection = dbconnection.getConnection();
-	 
 	PreparedStatement st = connection.prepareStatement(sql);)
 
 {    st.setString(1, tr.getEmployeeName());
@@ -301,35 +270,26 @@ return insert;}
 			            System.out.println(rs.getInt(1)+"\t\t"+rs.getString("employee_name"));
 			        }
 			        rs.close();
-			         
 			        st.close();
-			
 			       }
 			        }
 			        else if(ch == 1)
 			        {
 			            
-			            String sql =  "select department_id,employee_name from employee_details where e_id=?";
-			          
-	                 
-			            try(PreparedStatement k=connection.prepareStatement(sql);)
+		 String sql =  "select department_id,employee_name from employee_details where e_id=?";
+		   try(PreparedStatement k=connection.prepareStatement(sql);)
 			            {
 			            	  k.setInt(1,id);
-
 			            		try(ResultSet rs = k.executeQuery();)
 			            		{
-			             
 			            while(rs.next()){
 			                System.out.println(rs.getInt(1)+"\t"+rs.getString(2));
 			            }
 			            rs.close();
 			             
 			            st.close();
-			           
-			            
 			        }}}}
 					catch (Exception e) {
-						 
 							 e.printStackTrace();
 							 }
 				
@@ -340,11 +300,8 @@ return insert;}
 		
 		try (Connection con1 = dbconnection.getConnection(); Statement stmt = con1.createStatement();) {
             ArrayList<addressmodel> task = new ArrayList<>();
-            
             		 String sql=  "select e.e_id,e.employee_name,a.address_type,a.address_line1,a.city_name,a.pin_code from employee_details e inner join employee_addresses a on e.e_id=a.emp_id where e.employee_name='"+employeeName+"'";
-               
                     System.out.println(sql);
-                    
 
                     try (ResultSet rs = stmt.executeQuery(sql);) {
 
@@ -359,9 +316,6 @@ return insert;}
                             task.add(a);
                         }
                     }
-                
-		
-           
          catch (Exception e) {
             e.printStackTrace();
         }
