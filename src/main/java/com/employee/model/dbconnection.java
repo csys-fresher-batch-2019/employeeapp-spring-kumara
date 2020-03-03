@@ -14,8 +14,8 @@ public class dbconnection {
 		//TimeZone.setDefault(timeZone);
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		
-		//Connection con = DriverManager.getConnection("jdbc:oracle:thin:@13.235.147.120:1521:XE", "kumarakkani", "kumarakkani");
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "oracle");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@13.235.147.120:1521:XE", "kumarakkani", "kumarakkani");
+		//Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "oracle");
 		// Statement stmt=con.createStatement();
 		return con;
 
