@@ -1,8 +1,8 @@
-<%@page import="com.employee.EMP_t2.empdetailsDAOImpl"%>
+<%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="com.employee.EMP_t2.empdetailsDAOImpl" %>
-    <%@page import=  "com.employee.model.EmployeeDetail" %>
+    <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl" %>
+    <%@page import=  "com.chainsys.employeeapp.model.EmployeeDetail" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

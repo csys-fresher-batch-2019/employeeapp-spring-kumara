@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="com.employee.EMP_t2.empdetailsDAOImpl" %>
-    <%@page import=  "com.employee.model.EmployeeDetail" %>
+    <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl" %>
+    
+        <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>	
+    <%@page import=  "com.chainsys.employeeapp.model.EmployeeDetail" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
     <%@page import = "java.time.LocalDate" %>
-    <%@page import="com.employee.EMP_t2.empdetailsDAOImpl"%>
+    <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,8 +20,6 @@
 <center>
 <h3> EMPLOYEE DETAILS </h3>
 
-
-<% 		List<EmployeeDetail> ne= (ArrayList) request.getAttribute("empp");%>
 
 <thead>
 <tr><table border="2">
@@ -34,19 +34,20 @@
 		<th>Bloodgroup</th>
 	</b>
 </tr>
-          <%   for (EmployeeDetail ee : ne) { %>
+                     <c:forEach items="${empp}" var = "b"  >
+         
             	 <tr>
-            	 <td> <%=ee.geteId() %></td>
-            	 <td><a href ="AddressdetailServlet?name=<%=ee.getEmployeeName()%>"><%=ee.getEmployeeName() %></a> </td>
-            	 <td> <%=ee.getGender() %></td>
-            	 <td> <%=ee.getBirthDate() %></td>
-            	 <td> <%=ee.getJoiningDate() %></td>
-            	 <td> <%=ee.getPanCard() %></td>
-            	 <td> <%=ee.getGmail() %></td>
-            	 <td> <%=ee.getBloodGroup() %></td>
+            	 <td> ${b.eId}</td>
+            	 <td><a href ="AddressdetailServlet?name=${b.employeeName}">${b.employeeName}</a> </td>
+            	 <td> ${b.gender}</td>
+            	 <td> ${b.birthDate}</td>
+            	 <td> ${b.joiningDate}</td>
+            	 <td> ${b.panCard}</td>
+            	 <td> ${b.gmail}</td>
+            	 <td> ${b.bloodGroup}</td>
             	 </tr>
             	 
-            <% }  %>
+          </c:forEach>
 </table>
 <br><big>
 <form action="AllEmployee.jsp">

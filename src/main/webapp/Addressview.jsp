@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+
     pageEncoding="ISO-8859-1"%>
-    <%@page import="com.employee.EMP_t2.empdetailsDAOImpl" %>
-    <%@page import=  "com.employee.model.addressmodel" %>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+    <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl" %>
+    <%@page import=  "com.chainsys.employeeapp.model.addressmodel" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
     
-    <%@page import="com.employee.EMP_t2.empdetailsDAOImpl"%>
+    <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,30 +17,31 @@
 </head>
 <body>
 <jsp:include page="head.jsp"></jsp:include>
-<% 		List<addressmodel> ne= (ArrayList) request.getAttribute("addres");%>
+
 <center>
 <br>
 <br>
 <br></br></br></br>
 			
 <thead>
-          <%   for (addressmodel ee : ne) { %>
+
+            <c:forEach items="${addres}" var = "b"  >
           <b><big>
             	 <tr><tr><table border="4"></tr>
             	 <th>EID</th>
-            	 <td> <%=ee.geteId() %></td>
+            	 <td> ${b.eId}</td>
             	 </tr>
             	 <tr>
-            	 <th>EmployeeName</th>
-            	 <td><a href ="AddressdetailServlet?name=<%=ee.getEmployeeName()%>"><%=ee.getEmployeeName() %></a> </td>
-            	</tr><tr><th>AddressType</th><td><%=ee.getAddressType() %></td></tr>
-            	 <tr><th>AddressLine1</th><td> <%=ee.getAddressLine1() %></td></tr>
-            	 <tr> <th>CityName</th><td><%=ee.getCityName() %></td></tr>
-                 <tr> <th>pinCode</th>	 <td> <%=ee.getPinCode() %></td></tr>
+            	 <th>employeeName</th>
+            	 <td>${b.employeeName}</td>
+            	<tr><th>AddressType</th><td>${b.addressType}</td></tr>
+            	 <tr><th>AddressLine1</th><td> ${b.addressLine1}</td></tr>
+            	 <tr> <th>CityName</th><td>${b.cityName}</td></tr>
+                 <tr> <th>pinCode</th>	 <td> ${b.pinCode}</td></tr>
             	
             	 </tr>
             	 </b></big>
-            <% }  %>
+           </c:forEach>
 </table>
 <br><big>
 <form action="AllEmployee.jsp">
@@ -47,8 +50,7 @@
 </br>
 </form></center>
 </thead>
-</body>
-</html>
+
 
 </body>
 </html>

@@ -30,7 +30,7 @@ Enter Gender :
 <input type="radio" name="gender" value="female">female
 <input type="radio" name="gender" value="others">others
 <br/>
-<br>Enter DOB  :<input type="date" name="dob" placeholder="YYYY-MM-DD" max="2020-02-20"/ required><br/>
+<br>Enter DOB  :<input type="date" name="dob" placeholder="YYYY-MM-DD" max="2020-02-03"/ required><br/>
 
 <br>Enter JoiningDate  :<input type="date" name="joindate" placeholder="YYYY-MM-DD"max="2020-02-20"/><br/>
 <!--  <br> Enter panCard : <input type="text" name="pancard">

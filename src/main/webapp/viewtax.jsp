@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-      <%@page import="com.employee.salary_t3.salaryDAOImpl" %>
-    <%@page import=  "com.employee.model.salarymodel" %>
+      <%@page import="com.chainsys.employeeapp.dao.impl.salaryDAOImpl" %>
+    <%@page import=  "com.chainsys.employeeapp.model.salarymodel" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

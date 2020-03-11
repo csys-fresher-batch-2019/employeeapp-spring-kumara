@@ -34,7 +34,7 @@ placeholder = "Enter Name" required autofocus/><br/>
 required><br/> -->
 <br>Enter Password :<input type="password" name="password" required><br>
 
-<br>Enter DOB  :<input type="date" name="dob" placeholder="YYYY-MM-DD" max="2020-02-20"/><br/>
+<br>Enter DOB  :<input type="date" name="dob" placeholder="YYYY-MM-DD" max="2020-02-03"/><br/>
 <br>
 Enter Mobile Number :
 <input type="text" name="number" required
