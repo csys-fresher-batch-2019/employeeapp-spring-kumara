@@ -1,15 +1,14 @@
 package com.chainsys.employeeapp.dao;
 
+import java.util.List;
+
 public interface DepartmentDAO {
 
-void insertdeptment(int departmentId, String departmentName, int managerId,String departmentlocation) throws Exception;
+	void addDepartment(int departmentId, String departmentName, int managerId, String departmentlocation)
+			throws Exception;
+	
+	List<String> empdept() throws Exception;
 
-void deptadd(String deptName,int deptId) throws Exception;
-
-int getNoOfdept(String departmentLocation) throws Exception;
-
-
+	void deptadd(String deptName, int deptId) throws Exception;
 
 }
-
-

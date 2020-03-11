@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl;
-import com.chainsys.employeeapp.model.Empdept;
+import com.chainsys.employeeapp.model.EmpNameDepartment;
 import com.chainsys.employeeapp.model.EmployeeDetail;
 import com.chainsys.employeeapp.service.EmployeeService;
 @WebServlet("/deptviewServlet")
@@ -25,7 +25,7 @@ public class deptviewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
-		ArrayList<Empdept> ne= new ArrayList<Empdept>();
+		ArrayList<EmpNameDepartment> ne= new ArrayList<EmpNameDepartment>();
 		//empdetailsDAOImpl obbj= new empdetailsDAOImpl();
 		EmployeeService ee=new EmployeeService();
 		try {

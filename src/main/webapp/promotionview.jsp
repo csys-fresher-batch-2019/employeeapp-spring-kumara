@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@page import="com.chainsys.employeeapp.dao.impl.salaryDAOImpl" %>
-    <%@page import=  "com.chainsys.employeeapp.model.incrementmodel" %>
+    <%@page import=  "com.chainsys.employeeapp.model.SalaryIncrement" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
 <!DOCTYPE html> 
@@ -14,7 +14,9 @@
 <jsp:include page="head.jsp"></jsp:include></head>
 <br><br><br></br></br></br>
 
-<% 		List<incrementmodel> ne= (ArrayList) request.getAttribute("promote");%>
+<%
+	List<SalaryIncrement> ne= (ArrayList) request.getAttribute("promote");
+%>
 <center>
 <thead>
 <tr><table border="5">
@@ -30,7 +32,9 @@
 		
 	</b>
 </tr>
-          <%   for (incrementmodel ee : ne) { %>
+          <%
+          	for (SalaryIncrement ee : ne) {
+          %>
             	 <tr>
             	 <td> <%=ee.geteId() %></td>
             	 <td> <%=ee.getDepartmentId() %></td>

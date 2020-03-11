@@ -5,22 +5,24 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class EmployeeDetail {
-   
-	private  int eId;    
-    private int departmentId;
-    private String  employeeName;
-    private String gender;
+	private int eId;
+	private int departmentId;
+	private String employeeName;
+	private String gender;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate birthDate;
-   
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate joiningDate;
-    private String pancard ;
-    private long adharNumber ;
-    private String drivingLicenseNum;
-    private long employeeMobnum;
-    private String gmail;
-    private String bloodGroup;
+
+	private String pancard;
+	private long adharNumber;
+	private String drivingLicenseNum;
+	private long employeeMobNum;
+	private String email;
+	private String bloodGroup;
+
 	public int getDepartmentId() {
 		return departmentId;
 	}
@@ -77,27 +79,26 @@ public class EmployeeDetail {
 		this.adharNumber = adharNum;
 	}
 
-	public String getDrivingLicense_num() {
+	public String getDrivingLicensenum() {
 		return drivingLicenseNum;
 	}
 
-	public void setDrivingLicense_num(String drivingLicense_num) {
-		this.drivingLicenseNum = drivingLicense_num;
+	public void setDrivingLicensenum(String drivingLicensenum) {
+		this.drivingLicenseNum = drivingLicensenum;
 	}
 
-	public long getEmployeeMobnum() {
-		return employeeMobnum;
+	public long getEmployeeMobNum() {
+		return employeeMobNum;
 	}
 
-	public void setEmployeeMobnum(long employeeMobnum) {
-		this.employeeMobnum = employeeMobnum;
+	public void setEmployeeMobnum(long employeeMobNum) {
+		this.employeeMobNum = employeeMobNum;
 	}
-
 
 	public EmployeeDetail() {
-		
+
 	}
-	
+
 	public EmployeeDetail(int eId, int departmentId, String employeeName, String gender, LocalDate birthDate,
 			LocalDate joiningDate, String panCard, long adharNum, String drivingLicense_num, long employeeMobnum) {
 		super();
@@ -110,16 +111,16 @@ public class EmployeeDetail {
 		this.pancard = panCard;
 		this.adharNumber = adharNum;
 		this.drivingLicenseNum = drivingLicense_num;
-		this.employeeMobnum = employeeMobnum;
+		this.employeeMobNum = employeeMobnum;
 	}
-	
+
 	public void seteId1(int eId) {
-		if ( eId < 0) {
+		if (eId < 0) {
 			throw new IllegalArgumentException("Invalid Eid");
 		}
 		this.seteId1(eId);
 	}
-	
+
 	public int getId() {
 		return geteId();
 	}
@@ -134,25 +135,25 @@ public class EmployeeDetail {
 
 	public void save(EmployeeDetail employeeDetail) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void getInput() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void display() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public String getGmail() {
-		return gmail;
+		return email;
 	}
 
-	public void setGmail(String gmail) {
-		this.gmail = gmail;
+	public void setGmail(String email) {
+		this.email = email;
 	}
 
 	public String getBloodGroup() {
@@ -168,13 +169,7 @@ public class EmployeeDetail {
 		return "EmployeeDetail [eId=" + eId + ", departmentId=" + departmentId + ", employeeName=" + employeeName
 				+ ", gender=" + gender + ", birthDate=" + birthDate + ", joiningDate=" + joiningDate + ", panCard="
 				+ pancard + ", adharNum=" + adharNumber + ", drivingLicense_num=" + drivingLicenseNum
-				+ ", employeeMobnum=" + employeeMobnum + ", gmail=" + gmail + ", bloodGroup=" + bloodGroup + "]";
+				+ ", employeeMobnum=" + employeeMobNum + ", gmail=" + email + ", bloodGroup=" + bloodGroup + "]";
 	}
 
-	
-	
-
 }
-		
-	
-

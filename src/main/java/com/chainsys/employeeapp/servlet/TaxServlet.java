@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.employeeapp.dao.impl.salaryDAOImpl;
-import com.chainsys.employeeapp.model.salarymodel;
+import com.chainsys.employeeapp.model.EmployeeSalary;
 
 @WebServlet("/TaxServlet")
 
@@ -29,10 +29,10 @@ public class TaxServlet extends HttpServlet {
 		String s= request.getParameter("ID");
 		int e= Integer.parseInt(s);
 		salaryDAOImpl i=new salaryDAOImpl();
-		salarymodel ob=new salarymodel();
+		EmployeeSalary ob=new EmployeeSalary();
       
 	try {
-		 List<salarymodel> y = i.tax(e);
+		 List<EmployeeSalary> y = i.tax(e);
 		 request.setAttribute("taxx",y);
 	       RequestDispatcher f= request.getRequestDispatcher("viewtax.jsp");
 	       f.forward(request, response);

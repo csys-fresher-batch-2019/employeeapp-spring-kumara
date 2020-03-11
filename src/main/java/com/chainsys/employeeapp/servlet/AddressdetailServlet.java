@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl;
-import com.chainsys.employeeapp.model.addressmodel;
+import com.chainsys.employeeapp.model.EmployeeAddress;
 @WebServlet("/AddressdetailServlet")
 public class AddressdetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,10 +27,10 @@ public class AddressdetailServlet extends HttpServlet {
 	String s= request.getParameter("name");
 	
 	empdetailsDAOImpl u=new empdetailsDAOImpl();
-	addressmodel ob=new addressmodel();
+	EmployeeAddress ob=new EmployeeAddress();
    
 try {
-	List<addressmodel> yy = u.FindAllEmpAddress(s);
+	List<EmployeeAddress> yy = u.FindAllEmpAddress(s);
 	request.setAttribute("addres",yy);
 	   RequestDispatcher f= request.getRequestDispatcher("Addressview.jsp");
 	   f.forward(request, response);

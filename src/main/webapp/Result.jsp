@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.chainsys.employeeapp.model.bloodmodel"%>
+<%@ page import="com.chainsys.employeeapp.model.SearchBlood"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,14 +16,14 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <%
-String bloodGroup = request.getParameter("bloodgroup");
+	String bloodGroup = request.getParameter("bloodgroup");
 %>
 	<%
-		ArrayList<bloodmodel> list = (ArrayList) request.getAttribute("blood");
+		ArrayList<SearchBlood> list = (ArrayList) request.getAttribute("blood");
 	%>
 <h1><center>Blood Donors</center></h1>
 <form action=SendMaill.jsp>	
-<input type="text" name="bloodGroup" value="<%=bloodGroup %>" readonly/>
+<input type="text" name="bloodGroup" value="<%=bloodGroup%>" readonly/>
 	<center><table border="1">
 		<thead>
 			<tr>
@@ -36,7 +36,7 @@ String bloodGroup = request.getParameter("bloodgroup");
 			</tr>
 			<%
 				int i = 1;
-				for (bloodmodel obj : list) {
+					for (SearchBlood obj : list) {
 			%>
 			<tr>
 				<td><%=i++%></td>

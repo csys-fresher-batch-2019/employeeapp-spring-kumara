@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.chainsys.employeeapp.dao.impl.bloodDAOImpl;
-import com.chainsys.employeeapp.model.bloodmodel;
-import com.chainsys.employeeapp.util.bloodneed;
+import com.chainsys.employeeapp.model.SearchBlood;
+import com.chainsys.employeeapp.util.SendMailForBloodNeed;
 @WebServlet("/SendMaill")
 
 public class SendMaill extends HttpServlet {
@@ -42,14 +42,14 @@ public class SendMaill extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		// System.out.println(search);
 		// HttSession
-		bloodneed b = new bloodneed();
+		SendMailForBloodNeed b = new SendMailForBloodNeed();
 		bloodDAOImpl ob = new bloodDAOImpl();
 		try {
-			ArrayList<bloodmodel> list = new ArrayList<bloodmodel>();
+			ArrayList<SearchBlood> list = new ArrayList<SearchBlood>();
 			list = ob.Findempbloodgrp(bloodss);
-			for (bloodmodel bloodmodel : list) {
+			for (SearchBlood bloodmodel : list) {
 				String mailId = bloodmodel.getGmail();
-				bloodneed.send(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l, Locat);
+				SendMailForBloodNeed.send(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l, Locat);
 			}
 			String msg = "Mail sended";
 			RequestDispatcher rd = request.getRequestDispatcher("bloodsearch.jsp?res=" + msg);

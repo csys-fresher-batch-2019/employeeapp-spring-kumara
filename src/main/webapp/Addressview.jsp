@@ -3,7 +3,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
     <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl" %>
-    <%@page import=  "com.chainsys.employeeapp.model.addressmodel" %>
+    <%@page import=  "com.chainsys.employeeapp.model.EmployeeAddress" %>
    <%@page import= "java.util.ArrayList" %>
     <%@page import = "java.util.List" %>
     

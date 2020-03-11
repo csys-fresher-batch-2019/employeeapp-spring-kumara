@@ -21,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{ 
 		boolean insert = true;
-		com.chainsys.employeeapp.model.addman ob=new com.chainsys.employeeapp.model.addman();
+		com.chainsys.employeeapp.model.manager ob=new com.chainsys.employeeapp.model.manager();
 		ob.setManagerName(request.getParameter("name"));
 	    ob.setEmail(request.getParameter("email"));
 	    ob.setDob(Date.valueOf(request.getParameter("dob").toString()));

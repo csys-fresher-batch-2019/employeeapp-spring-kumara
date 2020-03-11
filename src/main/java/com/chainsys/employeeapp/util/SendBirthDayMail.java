@@ -16,7 +16,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;    
-public class Budday {  
+public class SendBirthDayMail {  
 	public static void send(final String from,final String password,String to,String sub,String Msg,int id) throws IOException
 	{  
 		Properties props = new Properties();    

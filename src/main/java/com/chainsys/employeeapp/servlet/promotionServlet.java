@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.employeeapp.dao.impl.salaryDAOImpl;
-import com.chainsys.employeeapp.model.incrementmodel;
+import com.chainsys.employeeapp.model.SalaryIncrement;
 @WebServlet("/promotionServlet")
 
 
@@ -29,10 +29,10 @@ public class promotionServlet extends HttpServlet {
 		String w=request.getParameter("num");
 		double w1=Double.parseDouble(w);
 		salaryDAOImpl i=new salaryDAOImpl();
-		incrementmodel ob=new incrementmodel();
+		SalaryIncrement ob=new SalaryIncrement();
       
 	try {
-		 List<incrementmodel> y = i.increment(w1, e);
+		 List<SalaryIncrement> y = i.increment(w1, e);
 		 request.setAttribute("promote",y);
 	       RequestDispatcher f= request.getRequestDispatcher("promotionview.jsp");
 	       f.forward(request, response);

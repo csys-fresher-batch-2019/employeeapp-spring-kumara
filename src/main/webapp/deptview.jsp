@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.chainsys.employeeapp.model.Empdept"%>
+<%@ page import="com.chainsys.employeeapp.model.EmpNameDepartment"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,8 +13,8 @@
 <body>
 <jsp:include page="head.jsp"></jsp:include>
 <%
-		ArrayList<Empdept> list = (ArrayList) request.getAttribute("empp");
-	%>
+	ArrayList<EmpNameDepartment> list = (ArrayList) request.getAttribute("empp");
+%>
 <big><br><center>
 <h3>Dept Details</h3></br>
 	<table border="1">
@@ -29,7 +29,7 @@
 			</tr>
 			<%
 				int i = 1;
-				for (Empdept obj : list) {
+						for (EmpNameDepartment obj : list) {
 			%>
 			<tr>
 				<td><%=i++%></td>

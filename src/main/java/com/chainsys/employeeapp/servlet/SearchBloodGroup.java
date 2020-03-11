@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.chainsys.employeeapp.dao.impl.bloodDAOImpl;
-import com.chainsys.employeeapp.model.bloodmodel;
+import com.chainsys.employeeapp.model.SearchBlood;
 
 @WebServlet("/SearchBloodGroup")
 
@@ -33,7 +33,7 @@ public class SearchBloodGroup extends HttpServlet {
 		session.setAttribute("bb", bloodGroup1);
 		PrintWriter out=response.getWriter();
 		bloodDAOImpl bloodDonars=new bloodDAOImpl();
-        ArrayList<bloodmodel> list=new ArrayList<bloodmodel>();
+        ArrayList<SearchBlood> list=new ArrayList<SearchBlood>();
 
 
 		try {

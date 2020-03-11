@@ -8,14 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.chainsys.employeeapp.dao.addmanagerDAO;
-import com.chainsys.employeeapp.model.addman;
+import com.chainsys.employeeapp.model.manager;
 import com.chainsys.employeeapp.util.dbconnection;
 
 public class managerADDImpl implements addmanagerDAO {
     private static final Logger logger = LoggerFactory.getLogger(managerADDImpl.class);
 
 
-	public boolean addmanager(addman add) throws Exception {
+	public boolean addmanager(manager add) throws Exception {
 		boolean insert = true;
 		String sql = "insert into manager(manager_name,email,dob,mob_num,pass_word,gender,manager_id) values(?,?,?,?,?,?,Update_sequence.nextval)";
 		try (Connection connection = dbconnection.getConnection();
