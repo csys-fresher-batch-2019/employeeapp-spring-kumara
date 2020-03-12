@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -37,14 +38,16 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	}
 
 	public List<String> empdept() throws Exception {
+		List<String> names =new ArrayList<>();
 		String sql = "(select  department_name as dept from departments where department_location is null)";
 
 		try (Connection con = dbconnection.getConnection();
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(sql);) {
 			logger.debug(sql);
-			while (rs.next()) {
+			while (rs.next()) { 
 				String deptt = rs.getString("dept");
+				names.add(deptt);
 				logger.debug(deptt);
 			}
 		} catch (SQLException e) {
@@ -53,7 +56,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 				throw new DbException(e);
 			}
 		}
-		return null;
+		return names;
 	}
 
 	public void deptadd(String deptName, int deptId) throws Exception {

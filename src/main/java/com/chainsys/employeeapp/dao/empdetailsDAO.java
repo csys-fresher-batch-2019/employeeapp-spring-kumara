@@ -17,8 +17,6 @@ public interface empdetailsDAO {
 
 	void jdate(String joiningDate, int empId) throws Exception;
 
-	List<String> deptcount() throws Exception;
-
 	// @SqlQuery ("select department_name,employee_name,department_id from
 	// departments d inner join employee_details e on d.d_id=e.department_id where
 	// d.d_id=?\"")

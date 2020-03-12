@@ -28,11 +28,6 @@ public class EmployeeService {
 		employeeDAO.jdate(joiningDate, empId);
 	}
 
-	public List<String> deptcount() throws Exception {
-		List<String> ss = employeeDAO.deptcount();
-		return ss;
-	}
-
 	// @SqlQuery ("select department_name,employee_name,department_id from
 	// departments d inner join employee_details e on d.d_id=e.department_id where
 	// d.d_id=?\"")

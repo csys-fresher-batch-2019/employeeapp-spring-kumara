@@ -73,26 +73,6 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		}
 	}
 
-	public List<String> deptcount() throws Exception {
-		String sql = "select department_id,department_name,count(employee_name) as emp_count from departments  inner join employee_details  on departments.d_id=employee_details.department_id  group by department_id,department_name order by department_id asc";
-		try (Connection con = dbconnection.getConnection();
-				Statement k = con.createStatement();
-				ResultSet rs = k.executeQuery(sql);) {
-			logger.debug(sql);
-			if (rs.next()) {
-				String departmentName = rs.getString("department_name");
-				String employeeName = rs.getString("department_id");
-				int employeeName2 = rs.getInt("emp_count");
-				logger.debug(employeeName + "," + departmentName + "," + employeeName2 + "");
-			}
-		} catch (SQLException e) {
-			{
-				e.printStackTrace();
-				throw new DbException(e);
-			}
-		}
-		return null;
-	}
 
 	public ArrayList<EmpNameDepartment> empdet(int dId) throws Exception {
 		ArrayList<EmpNameDepartment> list = new ArrayList<>();
