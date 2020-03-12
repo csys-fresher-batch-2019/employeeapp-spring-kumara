@@ -22,39 +22,37 @@ import com.chainsys.employeeapp.model.SearchBlood;
  */
 public class SearchBloodGroup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String bloodGroup1=request.getParameter("bloodgroup");
+		String bloodGroup1 = request.getParameter("bloodgroup");
 		System.out.println(bloodGroup1);
 		HttpSession session = request.getSession();
 		session.setAttribute("bb", bloodGroup1);
-		PrintWriter out=response.getWriter();
-		bloodDAOImpl bloodDonars=new bloodDAOImpl();
-        ArrayList<SearchBlood> list=new ArrayList<SearchBlood>();
-
+		PrintWriter out = response.getWriter();
+		bloodDAOImpl bloodDonars = new bloodDAOImpl();
+		ArrayList<SearchBlood> list = new ArrayList<SearchBlood>();
 
 		try {
 			list = bloodDonars.Findempbloodgrp(bloodGroup1);
 			System.out.println(list);
-			request.setAttribute("blood",list);
+			request.setAttribute("blood", list);
 			RequestDispatcher rd = request.getRequestDispatcher("Result.jsp");
-			HttpSession ses=request.getSession();
+			HttpSession ses = request.getSession();
 			ses.setAttribute("blood", bloodGroup1);
-			rd.forward(request,response);
-			
-			/*for (BloodGroup bloodGroup : list) {
-				out.print(bloodGroup.getBloodGroup()+"\t"+bloodGroup.getEmpName()+"\t"+bloodGroup.getEmail()+"</br>");
-			}*/
+			rd.forward(request, response);
+
+			/*
+			 * for (BloodGroup bloodGroup : list) {
+			 * out.print(bloodGroup.getBloodGroup()+"\t"+bloodGroup.getEmpName()+"\t"+
+			 * bloodGroup.getEmail()+"</br>"); }
+			 */
 		} catch (Exception e) {
-		
+
 			e.printStackTrace();
 		}
-		
-		}
-		
-		
+
 	}
 
+}

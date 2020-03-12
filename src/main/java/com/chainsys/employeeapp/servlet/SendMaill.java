@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.chainsys.employeeapp.dao.impl.bloodDAOImpl;
 import com.chainsys.employeeapp.model.SearchBlood;
 import com.chainsys.employeeapp.util.SendMailForBloodNeed;
+
 @WebServlet("/SendMaill")
 
 public class SendMaill extends HttpServlet {
@@ -48,8 +49,9 @@ public class SendMaill extends HttpServlet {
 			ArrayList<SearchBlood> list = new ArrayList<SearchBlood>();
 			list = ob.Findempbloodgrp(bloodss);
 			for (SearchBlood bloodmodel : list) {
-				String mailId = bloodmodel.getGmail();
-				SendMailForBloodNeed.send(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l, Locat);
+				String mailId = bloodmodel.getEmail();
+				SendMailForBloodNeed.send(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l,
+						Locat);
 			}
 			String msg = "Mail sended";
 			RequestDispatcher rd = request.getRequestDispatcher("bloodsearch.jsp?res=" + msg);

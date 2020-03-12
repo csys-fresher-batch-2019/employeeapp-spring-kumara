@@ -28,8 +28,8 @@ public class EmployeeService {
 		employeeDAO.jdate(joiningDate, empId);
 	}
 
-	public com.chainsys.employeeapp.dao.list deptcount() throws Exception {
-		com.chainsys.employeeapp.dao.list ss = employeeDAO.deptcount();
+	public List<String> deptcount() throws Exception {
+		List<String> ss = employeeDAO.deptcount();
 		return ss;
 	}
 

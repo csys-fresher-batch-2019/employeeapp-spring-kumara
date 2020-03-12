@@ -12,8 +12,7 @@ import com.chainsys.employeeapp.model.manager;
 import com.chainsys.employeeapp.util.dbconnection;
 
 public class managerADDImpl implements addmanagerDAO {
-    private static final Logger logger = LoggerFactory.getLogger(managerADDImpl.class);
-
+	private static final Logger logger = LoggerFactory.getLogger(managerADDImpl.class);
 
 	public boolean addmanager(manager add) throws Exception {
 		boolean insert = true;

@@ -13,17 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 
 public class deleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		
-		com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl ee=new com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl();
-		String e=request.getParameter("ID");
-		int eee=Integer.parseInt(e);
+
+		com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl ee = new com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl();
+		String e = request.getParameter("ID");
+		int eee = Integer.parseInt(e);
 		try {
 			ee.deleteEmployeeByEmpId(eee);
 			String msgs = "Removed Successfully";
@@ -33,7 +31,7 @@ public class deleteServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 	}
 
 }

@@ -7,6 +7,7 @@ import com.chainsys.employeeapp.model.SalaryIncrement;
 import com.chainsys.employeeapp.model.EmployeeSalary;
 
 public interface salaryDAO {
-List<EmployeeSalary> tax(int eId) throws SQLException, Exception;
-List<SalaryIncrement> increment(double increment, int Noofyear) throws SQLException, Exception;;
+	List<EmployeeSalary> tax(int eId) throws SQLException, Exception;
+
+	List<SalaryIncrement> increment(double increment, int Noofyear) throws SQLException, Exception;;
 }
