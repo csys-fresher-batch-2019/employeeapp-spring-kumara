@@ -1,12 +1,12 @@
 package com.chainsys.employeeapp.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class manager {
 	private int managerId;
 	private String managerName;
 	private String Email;
-	private Date dob;
+	private LocalDate dob;
 	private Long mobNum;
 	private String password;
 	private String gender;
@@ -35,11 +35,11 @@ public class manager {
 		Email = email;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 

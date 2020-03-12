@@ -1,6 +1,7 @@
 package com.chainsys.employeeapp.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -22,7 +23,7 @@ public class managerADDImpl implements addmanagerDAO {
 			logger.debug(sql);
 			k.setString(1, add.getManagerName());
 			k.setString(2, add.getEmail());
-			k.setDate(3, add.getDob());
+			k.setDate(3, Date.valueOf(add.getDob()));
 			k.setLong(4, add.getMobNum());
 			k.setString(5, add.getPassWord());
 			k.setString(6, add.getGender());

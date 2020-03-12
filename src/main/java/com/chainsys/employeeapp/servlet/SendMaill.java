@@ -50,7 +50,7 @@ public class SendMaill extends HttpServlet {
 			list = ob.Findempbloodgrp(bloodss);
 			for (SearchBlood bloodmodel : list) {
 				String mailId = bloodmodel.getEmail();
-				SendMailForBloodNeed.send(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l,
+				SendMailForBloodNeed.sendBuddayMail(gmail, pass, mailId, sub, bloodss, hospitalname, patientName, patDiag, l,
 						Locat);
 			}
 			String msg = "Mail sended";

@@ -21,19 +21,15 @@ public class listempServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		List<EmployeeDetail> ne = new ArrayList<EmployeeDetail>();
 		empdetailsDAOImpl obbj = new empdetailsDAOImpl();
-
 		try {
 			ne = obbj.showempDetails();
 			request.setAttribute("empp", ne);
 			RequestDispatcher dd = request.getRequestDispatcher("listemployees.jsp");
 			dd.forward(request, response);
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
-
 	}
 }

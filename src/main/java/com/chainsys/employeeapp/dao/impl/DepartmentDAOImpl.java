@@ -38,7 +38,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	}
 
 	public List<String> empdept() throws Exception {
-		List<String> names =new ArrayList<>();
+		List<String> names = new ArrayList<>();
 		String sql = "(select  department_name as dept from departments where department_location is null)";
 
 		try (Connection con = dbconnection.getConnection();

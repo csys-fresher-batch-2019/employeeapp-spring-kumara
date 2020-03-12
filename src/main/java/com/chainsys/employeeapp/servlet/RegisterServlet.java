@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
 		com.chainsys.employeeapp.model.manager ob = new com.chainsys.employeeapp.model.manager();
 		ob.setManagerName(request.getParameter("name"));
 		ob.setEmail(request.getParameter("email"));
-		ob.setDob(Date.valueOf(request.getParameter("dob").toString()));
+		ob.setDob(Date.valueOf(request.getParameter("dob")).toLocalDate());
 		ob.setMobNum(Long.parseLong(request.getParameter("number")));
 		ob.setPassWord(request.getParameter("password"));
 		ob.setGender(request.getParameter("gender"));

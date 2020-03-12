@@ -21,7 +21,6 @@ public class promotionServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		String s = request.getParameter("number");
@@ -36,7 +35,6 @@ public class promotionServlet extends HttpServlet {
 			request.setAttribute("promote", y);
 			RequestDispatcher f = request.getRequestDispatcher("promotionview.jsp");
 			f.forward(request, response);
-
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		} catch (Exception e1) {

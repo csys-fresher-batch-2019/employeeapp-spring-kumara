@@ -16,7 +16,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class SendMailForBloodNeed {
-	public static void send(final String from, final String password, String to, String sub, String blood,
+	public static void sendBuddayMail(final String from, final String password, String to, String sub, String blood,
 			String hospitalname, String patientname, String disease, long contact, String location) throws IOException {
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");

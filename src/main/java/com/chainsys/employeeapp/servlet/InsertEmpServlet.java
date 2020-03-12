@@ -20,7 +20,6 @@ public class InsertEmpServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		// Get form values
 
 		EmployeeDetail fd = new EmployeeDetail();
@@ -39,7 +38,6 @@ public class InsertEmpServlet extends HttpServlet {
 		fd.setAdharNum(athar);
 		fd.setEmployeeMobnum(phone);
 		// Convert String to appropriate type
-
 		// Store form values in model object =set all values
 
 		fd.setGmail(request.getParameter("email"));
@@ -56,7 +54,5 @@ public class InsertEmpServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
-
 }

@@ -20,7 +20,7 @@ public class updateServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		boolean insert = true;
+		
 		com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl ee = new com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl();
 		EmployeeDetail rs = new EmployeeDetail();
 		String e = request.getParameter("ID");
@@ -31,11 +31,17 @@ public class updateServlet extends HttpServlet {
 		rs.seteId(eee);
 		rs.setDepartmentId(eeee);
 		try {
+			boolean insert=ee.validateEmpID(eee); 
+			if(insert) {
 			ee.updateEmpDept(rs);
 			String msgs = "Updated Successfully";
 			RequestDispatcher rd = request.getRequestDispatcher("AllEmployee.jsp?res1=" + msgs);
 			rd.forward(request, response);
-		} catch (Exception e1) {
+		}else {
+			String msg = "Invalid emp-ID";
+			response.sendRedirect("update.jsp?res1="+msg);
+		}
+			} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

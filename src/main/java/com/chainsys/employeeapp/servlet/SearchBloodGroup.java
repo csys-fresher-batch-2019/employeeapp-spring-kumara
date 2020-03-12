@@ -42,17 +42,13 @@ public class SearchBloodGroup extends HttpServlet {
 			HttpSession ses = request.getSession();
 			ses.setAttribute("blood", bloodGroup1);
 			rd.forward(request, response);
-
 			/*
 			 * for (BloodGroup bloodGroup : list) {
 			 * out.print(bloodGroup.getBloodGroup()+"\t"+bloodGroup.getEmpName()+"\t"+
 			 * bloodGroup.getEmail()+"</br>"); }
 			 */
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
-
 	}
-
 }

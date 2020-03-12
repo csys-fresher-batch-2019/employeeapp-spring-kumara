@@ -16,7 +16,6 @@ public class loginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		boolean value = false;
-
 		com.chainsys.employeeapp.dao.impl.managerADDImpl obj = new com.chainsys.employeeapp.dao.impl.managerADDImpl();
 		String managerName = request.getParameter("Username");
 		String passWord = request.getParameter("password");

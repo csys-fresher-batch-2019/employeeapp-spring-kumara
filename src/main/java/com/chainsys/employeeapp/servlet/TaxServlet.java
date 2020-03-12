@@ -21,22 +21,17 @@ public class TaxServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-
 		{
-
 			String s = request.getParameter("ID");
 			int e = Integer.parseInt(s);
 			salaryDAOImpl i = new salaryDAOImpl();
 			EmployeeSalary ob = new EmployeeSalary();
-
 			try {
 				List<EmployeeSalary> y = i.tax(e);
 				request.setAttribute("taxx", y);
 				RequestDispatcher f = request.getRequestDispatcher("viewtax.jsp");
 				f.forward(request, response);
-
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			} catch (Exception e1) {

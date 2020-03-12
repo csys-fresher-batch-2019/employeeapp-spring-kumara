@@ -29,16 +29,12 @@ public class deptviewServlet extends HttpServlet {
 			String g = request.getParameter("text");
 			int id = Integer.parseInt(g);
 			ne = ee.empdet(id);
-
 			request.setAttribute("empp", ne);
 			System.out.println(id);
 			RequestDispatcher dd = request.getRequestDispatcher("deptview.jsp");
 			dd.forward(request, response);
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
-
 	}
-
 }
