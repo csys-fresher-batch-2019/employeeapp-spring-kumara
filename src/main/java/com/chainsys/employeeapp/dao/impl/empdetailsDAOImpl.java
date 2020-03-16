@@ -219,7 +219,6 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 					result = true;
 				}
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

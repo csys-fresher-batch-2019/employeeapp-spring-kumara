@@ -15,19 +15,15 @@ import com.chainsys.employeeapp.model.EmployeeDetail;
 
 public class updateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl ee = new com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl();
 		EmployeeDetail rs = new EmployeeDetail();
 		String e = request.getParameter("ID");
 		int eee = Integer.parseInt(e);
 		String qe = request.getParameter("dept");
 		int eeee = Integer.parseInt(qe);
-
 		rs.seteId(eee);
 		rs.setDepartmentId(eeee);
 		try {
@@ -42,9 +38,7 @@ public class updateServlet extends HttpServlet {
 			response.sendRedirect("update.jsp?res1="+msg);
 		}
 			} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
-
 }
