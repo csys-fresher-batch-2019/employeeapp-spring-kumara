@@ -21,9 +21,7 @@ public class deptviewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-
 		ArrayList<EmpNameDepartment> ne = new ArrayList<EmpNameDepartment>();
-		// empdetailsDAOImpl obbj= new empdetailsDAOImpl();
 		EmployeeService ee = new EmployeeService();
 		try {
 			String g = request.getParameter("text");

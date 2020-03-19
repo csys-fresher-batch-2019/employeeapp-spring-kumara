@@ -64,7 +64,6 @@ public class SendMailForBloodNeed {
 			multipart.addBodyPart(messageBodyPart5);
 			multipart.addBodyPart(messageBodyPart6);
 			multipart.addBodyPart(messageBodyPart7);
-
 			message.setContent(multipart);
 			Transport.send(message);
 			System.out.println("Message sended");

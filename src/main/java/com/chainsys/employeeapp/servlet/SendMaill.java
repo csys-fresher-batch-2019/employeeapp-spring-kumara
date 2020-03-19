@@ -27,7 +27,6 @@ public class SendMaill extends HttpServlet {
 		String gmail = "kumarusaro@gmail.com";
 		String pass = "usosbrenz";
 		// String mailId=bloodmodel.getGmail();
-
 		String sub = "Blood Needed";
 		String hospitalname = request.getParameter("Hosname");
 		HttpSession session = request.getSession();
