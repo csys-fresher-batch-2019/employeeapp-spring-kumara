@@ -40,8 +40,6 @@ public class SendMaill extends HttpServlet {
 
 		// System.out.println(\[[b'.-"SendMail:" + search);
 		PrintWriter out = response.getWriter();
-		// System.out.println(search);
-		// HttSession
 		SendMailForBloodNeed b = new SendMailForBloodNeed();
 		bloodDAOImpl ob = new bloodDAOImpl();
 		try {
