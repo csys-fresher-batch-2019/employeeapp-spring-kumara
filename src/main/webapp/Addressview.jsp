@@ -35,7 +35,7 @@
             	 <th>employeeName</th>
             	 <td>${b.employeeName}</td>
             	<tr><th>AddressType</th><td>${b.addressType}</td></tr>
-            	 <tr><th>AddressLine1</th><td> ${b.addressLine1}</td></tr>
+            	 <tr><th>AddressLine</th><td> ${b.addressLine}</td></tr>
             	 <tr> <th>CityName</th><td>${b.cityName}</td></tr>
                  <tr> <th>pinCode</th>	 <td> ${b.pinCode}</td></tr>
             	

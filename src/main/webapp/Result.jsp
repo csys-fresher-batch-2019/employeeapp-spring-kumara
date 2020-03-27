@@ -44,7 +44,7 @@
 				<td><%=obj.getEmployeeName()%></td>
 				<td><%=obj.getDepartmentId() %>
 				<td><%=obj.getEmployeeMobnum()%></td>
-				<td><%=obj.getGmail()%></td>
+				<td><%=obj.getEmail()%></td>
 				
 			</tr>
 
