@@ -10,7 +10,9 @@ import com.chainsys.employeeapp.model.SearchBlood;
 import com.chainsys.employeeapp.util.dbconnection;
 
 public class bloodDAOImpl implements bloodDAO {
-
+	/**
+	 * *Used to display and find employee by using with bloodgroup.
+	 */
 	public ArrayList<SearchBlood> Findempbloodgrp(String BloodGroup) throws Exception {
 		String sql = "select * from employee_details where blood_group=?";
 		ArrayList<SearchBlood> list = new ArrayList<>();
@@ -32,7 +34,6 @@ public class bloodDAOImpl implements bloodDAO {
 				}
 			}
 			return list;
-
 		}
 	}
 }

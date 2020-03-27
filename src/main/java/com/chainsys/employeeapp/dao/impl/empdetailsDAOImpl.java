@@ -24,6 +24,9 @@ import com.chainsys.employeeapp.util.dbconnection;
 public class empdetailsDAOImpl implements empdetailsDAO {
 	private static final Logger logger = LoggerFactory.getLogger(loggerutil.class);
 
+	/**
+	 * used to Display all employee with employeeID.
+	 */
 	public List<EmployeeDetail> showempDetails() throws Exception {
 		List<EmployeeDetail> ne = new ArrayList<>();
 		String sql = "select * from employee_details";
@@ -52,6 +55,10 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		return ne;
 	}
 
+	/**
+	 * used to update employee joiningDate by emoployee_id Convert 
+	 *  LocalDate function into Date
+	 */
 	public void jdate(String joiningDate, int empId) throws Exception {
 		// String joiningDate = "2019-04-12";
 		// int empId = 2;
@@ -73,7 +80,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		}
 	}
 
-
+	/**
+	 * used to display employeeDepartment and details by using department_id.
+	 */
 	public ArrayList<EmpNameDepartment> empdet(int dId) throws Exception {
 		ArrayList<EmpNameDepartment> list = new ArrayList<>();
 		String sql = "select e_id,department_id,employee_name, department_name,department_location from departments d inner join employee_details e on d.d_id=e.department_id where d.d_id=?";
@@ -99,6 +108,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		}
 	}
 
+	/**
+	 * used to delete employee by using his employeeID.
+	 */
 	public void deleteEmployeeByEmpId(int eId) throws Exception {
 		String sql = "delete from employee_Details where e_id=?";
 		try (Connection connection = dbconnection.getConnection();
@@ -114,6 +126,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		}
 	}
 
+	/**
+	 * update an employee department by using employeeId.
+	 */
 	@Override
 	public boolean updateEmpDept(EmployeeDetail ee) throws Exception {
 		boolean value = false;
@@ -134,6 +149,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		return value;
 	}
 
+	/**
+	 * used to insert an new employee in employeeDatabase
+	 */
 	public boolean insert(EmployeeDetail tr) throws Exception {
 		boolean insert = true;
 		String sql = "insert into employee_details (e_id,employee_name,gender,birth_date,joining_date,pan_card,adhar_num,employee_mobnum,gmail,blood_group) values(employee_adds.nextval,?,?,?,?,?,?,?,?,?)";
@@ -183,6 +201,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 	 * (Exception e) { e.printStackTrace(); } }
 	 */
 
+	/**
+	 * Used to find and display employeeAddress by using his employeeName.
+	 */
 	@Override
 	public List<EmployeeAddress> FindAllEmpAddress(String employeeName) throws SQLException, Exception {
 		String sql = "select e.e_id,e.employee_name,a.address_type,a.address_line1,a.city_name,a.pin_code from employee_details e inner join employee_addresses a on e.e_id=a.emp_id where e.employee_name=?";
@@ -209,6 +230,9 @@ public class empdetailsDAOImpl implements empdetailsDAO {
 		}
 	}
 
+	/**
+	 * used to display correct employyeId by using employeeId for validation
+	 */
 	public boolean validateEmpID(int eID) {
 		String sql = "select e_id from employee_details where e_id=?";
 		boolean result = false;

@@ -18,6 +18,9 @@ import com.chainsys.employeeapp.util.dbconnection;
 public class DepartmentDAOImpl implements DepartmentDAO {
 	private static final Logger logger = LoggerFactory.getLogger(DepartmentDAOImpl.class);
 
+	/**
+	 * Used to insert a new department in departments.
+	 */
 	public void addDepartment(int departmentId, String departmentName, int managerId, String departmentlocation)
 			throws Exception {
 		String sql = "insert into departments(d_id,department_name,manager_id,department_location) values (?,?,?,?)";
@@ -37,6 +40,9 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		}
 	}
 
+	/**
+	 * used to display departmentName in departments by using departmentLocation
+	 */
 	public List<String> empdept() throws Exception {
 		List<String> names = new ArrayList<>();
 		String sql = "(select  department_name as dept from departments where department_location is null)";
@@ -45,7 +51,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(sql);) {
 			logger.debug(sql);
-			while (rs.next()) { 
+			while (rs.next()) {
 				String deptt = rs.getString("dept");
 				names.add(deptt);
 				logger.debug(deptt);
@@ -59,6 +65,9 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		return names;
 	}
 
+	/**
+	 * used to update departmentName by using departmentId.
+	 */
 	public void deptadd(String deptName, int deptId) throws Exception {
 		String sql = "update departments set department_name= ? where d_id= ?";
 

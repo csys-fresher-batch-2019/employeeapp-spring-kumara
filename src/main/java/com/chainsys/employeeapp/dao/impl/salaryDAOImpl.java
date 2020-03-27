@@ -11,13 +11,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.chainsys.employeeapp.dao.salaryDAO;
-import com.chainsys.employeeapp.model.SalaryIncrement;
 import com.chainsys.employeeapp.model.EmployeeSalary;
+import com.chainsys.employeeapp.model.SalaryIncrement;
 import com.chainsys.employeeapp.util.DbException;
 import com.chainsys.employeeapp.util.dbconnection;
 
 public class salaryDAOImpl implements salaryDAO {
 
+	/**
+	 * used to display employee tax by using employeeID
+	 */
 	private static final Logger logger = LoggerFactory.getLogger(salaryDAOImpl.class);
 
 	@Override
@@ -49,6 +52,9 @@ public class salaryDAOImpl implements salaryDAO {
 		return list;
 	}
 
+	/**
+	 * used to display and update employeeIncrement by using NoofYearEXperience
+	 */
 	@Override
 	public List<SalaryIncrement> increment(double increment, int Noofyear) throws SQLException, Exception {
 

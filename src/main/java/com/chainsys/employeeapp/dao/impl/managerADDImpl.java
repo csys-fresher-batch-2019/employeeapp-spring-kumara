@@ -15,6 +15,9 @@ import com.chainsys.employeeapp.util.dbconnection;
 public class managerADDImpl implements addmanagerDAO {
 	private static final Logger logger = LoggerFactory.getLogger(managerADDImpl.class);
 
+	/**
+	 * Insert a new and extra Manager in managerAdd
+	 */
 	public boolean addmanager(manager add) throws Exception {
 		boolean insert = true;
 		String sql = "insert into manager(manager_name,email,dob,mob_num,pass_word,gender,manager_id) values(?,?,?,?,?,?,Update_sequence.nextval)";
@@ -38,6 +41,9 @@ public class managerADDImpl implements addmanagerDAO {
 		}
 	}
 
+	/**
+	 * To find a correct manager_userName and password to LogIN
+	 */
 	public boolean login(String managerName, String passWord) throws Exception {
 
 		boolean result = false;
