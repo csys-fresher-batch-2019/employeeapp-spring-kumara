@@ -21,10 +21,16 @@ public class deleteServlet extends HttpServlet {
 		String e = request.getParameter("ID");
 		int eee = Integer.parseInt(e);
 		try {
-			ee.deleteEmployeeByEmpId(eee);
-			String msgs = "Removed Successfully";
-			RequestDispatcher rd = request.getRequestDispatcher("AllEmployee.jsp?res1=" + msgs);
-			rd.forward(request, response);
+			boolean insert = ee.validateEmpID(eee);
+			if (insert) {
+				ee.deleteEmployeeByEmpId(eee);
+				String msgs = "Removed Successfully";
+				RequestDispatcher rd = request.getRequestDispatcher("AllEmployee.jsp?res1=" + msgs);
+				rd.forward(request, response);
+			} else {
+				String msg = "Invalid emp-ID";
+				response.sendRedirect("delete.jsp?res1=" + msg);
+			}
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
