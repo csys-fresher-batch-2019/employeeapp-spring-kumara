@@ -33,9 +33,9 @@ body {
 					name="gender" value="female">female <input type="radio"
 					name="gender" value="others">others <br /> <br>Enter
 					DOB :<input type="date" name="dob" placeholder="YYYY-MM-DD"
-					max="2020-03-30" / required><br /> <br>Enter
+					max="2020-03-31" / required><br /> <br>Enter
 					JoiningDate :<input type="date" name="joindate"
-					placeholder="YYYY-MM-DD" max="2020-03-30" /><br /> <!--  <br> Enter panCard : <input type="text" name="pancard">
+					placeholder="YYYY-MM-DD" max="2020-03-31" /><br /> <!--  <br> Enter panCard : <input type="text" name="pancard">
 </br>
 &nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;--> <br> Enter AdharNumber :<input type="number"
