@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl"%>
-
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="com.chainsys.employeeapp.model.EmployeeDetail"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.time.LocalDate"%>
-<%@page import="com.chainsys.employeeapp.dao.impl.empdetailsDAOImpl"%>
 <!DOCTYPE html>
-tml>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Employees</title>
@@ -30,7 +27,7 @@ tml>
 					<b>
 						<th>EID></th>
 						<th>EmployeeName</th>
-						<th>Gender></th>
+						<th>Gender</th>
 						<th>BirthDate</th>
 						<th>JoiningDate</th>
 						<th>pancard</th>
@@ -45,13 +42,18 @@ tml>
 							<td><a href="AddressdetailServlet?name=${b.employeeName}">${b.employeeName}</a>
 							</td>
 							<td>${b.gender}</td>
-							<td>${b.birthDate}</td>
-							<td>${b.joiningDate}</td>
+							<td><c:set var="startDate" value="${b.birthDate}" /> <fmt:parseDate
+									var="parsedStartDate" value="${b.birthDate}" type="date"
+									pattern="yyyy-MM-dd" /> <fmt:formatDate pattern="dd-MM-yyyy"
+									value="${parsedStartDate}" /></td>
+							<td><c:set var="startDate" value="${b.joiningDate}" /> <fmt:parseDate
+									var="parsedStartDate" value="${b.joiningDate}" type="date"
+									pattern="yyyy-MM-dd" /> <fmt:formatDate pattern="dd-MM-yyyy"
+									value="${parsedStartDate}" /></td>
 							<td>${b.panCard}</td>
 							<td>${b.gmail}</td>
 							<td>${b.bloodGroup}</td>
 						</tr>
-
 					</c:forEach>
 				</table>
 				<br>
